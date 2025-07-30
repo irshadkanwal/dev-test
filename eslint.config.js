@@ -2,6 +2,9 @@ import { FlatCompat } from "@eslint/eslintrc";
 import tseslint from "typescript-eslint";
 // @ts-expect-error: ESLint flat config doesn't love this plugin's type shape
 import boundaries from "eslint-plugin-boundaries";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
